@@ -4,8 +4,8 @@ import { StyleSheet, Text, View, Button, TextInput, SafeAreaView, TouchableOpaci
 const currentValue = { 
   DOLLAR: 0.014,
   RUPEE: 1,
-  CAD: 0.17,
-  GBP: 0.03,
+  CAD: 0.017,
+  GBP: 0.01,
   BITCOIN: 0.000014
 };
 
@@ -27,12 +27,8 @@ export default class CurrenyConverter extends Component
        {
          alert('Enter some currency');
        }
-
        let results = parseFloat(this.state.inputValue) * currentValue[currency];
-
        this.setState({resultValue: results.toFixed(3)});
-
-
      };
 
      
@@ -67,11 +63,21 @@ export default class CurrenyConverter extends Component
                 <TouchableOpacity 
                   style={styles.button}
                   onPress={(value)=>{this.buttonTapped('DOLLAR')}}
-                  
                 >
                   <Text style={styles.buttonText}> $ </Text>
                 </TouchableOpacity>
-
+                <TouchableOpacity 
+                  style={styles.button}
+                  onPress={(value)=>{this.buttonTapped('CAD')}}
+                >
+                  <Text style={styles.buttonText}> CAD </Text>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                  style={styles.button}
+                  onPress={(value)=>{this.buttonTapped('GBP')}}
+                >
+                  <Text style={styles.buttonText}> GBP </Text>
+                </TouchableOpacity>
               
                  
 
